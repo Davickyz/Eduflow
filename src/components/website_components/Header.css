@@ -1,0 +1,9 @@
+@import "../../css/tailwindcss.css";
+
+.nav-item {
+  @apply text-secondary transition-colors hover:text-orange-accent;
+}
+
+.nav-item.active {
+  @apply text-orange-accent font-bold border-b-2 p-1 mb-4 h-[40px];
+}

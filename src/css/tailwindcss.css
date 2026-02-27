@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-satoshi: 'Satoshi', Impact, sans-serif;
+
+
+  --color-primary: #0B1623;
+  --color-secondary: #F5F5F5;
+  --color-secondary-light: #C6C8CB;
+  --color-orange-accent: #BE4D25;
+  --color-green-accent: #00AD26;
+  --color-purple-accent: #BE2596;
+  --color-cream-accent: #CEC67B;
+}

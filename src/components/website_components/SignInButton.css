@@ -1,0 +1,9 @@
+@import "../../css/tailwindcss.css";
+
+button.sign-in {
+  @apply bg-orange-accent border border-orange-accent text-secondary w-22 h-[40px] rounded-[18px] font-[400] cursor-pointer transition-all duration-100 ease-in;
+}
+
+/* button.sign-in:hover{
+  @apply bg-secondary-light text-orange-accent border border-orange-accent;
+} */
