@@ -20,15 +20,15 @@ form{
   @apply text-secondary font-[500];
 }
 
-input{
+.input-div input{
   @apply font-medium text-xs px-2 py-2 h-8 border border-secondary rounded-sm bg-input text-gray-900 transition duration-200;
 }
 
-input:hover {
+.input-div input:hover {
   @apply border-orange-accent;
 }
 
-input:focus{
+.input-div input:focus{
   @apply outline-none border-orange-accent;
 }
 
@@ -46,4 +46,36 @@ form > p:last-child {
 
 form > p:last-child > span{
   @apply font-bold underline;
+}
+
+.signin-input {
+  @apply w-full relative
+}
+
+.signin-input > label{
+  @apply absolute left-2 top-3 text-secondary-light text-xs
+}
+
+.signin-input > input {
+  @apply w-full border border-secondary-light pl-18 h-10 rounded-md text-xs text-secondary font-medium
+}
+
+.signin-input > input:hover {
+  @apply border-orange-accent;
+}
+
+.signin-input > input:focus{
+  @apply outline-none border-orange-accent;
+}
+
+.signin-input:nth-child(3) > input {
+  @apply pl-23
+}
+
+.signin-input:nth-child(5) > input {
+  @apply pl-17
+}
+
+.signin-input:nth-child(6) > input {
+  @apply pl-28
 }

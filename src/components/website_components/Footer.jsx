@@ -9,8 +9,8 @@ const Footer = () => {
       <footer className="px-[20px] py-[60px] flex flex items-center justify-between bg-footer">
 
         {/* Logo */}
-        <div id="logo" className="flex flex-row items-center gap-[10px]">
-          <img className="w-[40px] h-[40px]" src={logo} alt="logo" />
+        <div id="logo" className="flex flex-row items-center gap-[10px] pointer-events-none">
+          <img className="w-[40px] h-[40px]" src={logo} />
           <h3 className="uppercase font-bold text-secondary-light text-[18px] cursor-default">EduFlow</h3>
         </div>
 
