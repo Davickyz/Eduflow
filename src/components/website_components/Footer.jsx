@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return(
     <>
-      <footer className="fixed bottom-0 left-0 right-0 px-[20px] py-[60px] flex flex items-center justify-between bg-footer">
+      <footer className="px-[20px] py-[60px] flex flex items-center justify-between bg-footer">
 
         {/* Logo */}
         <div id="logo" className="flex flex-row items-center gap-[10px]">
@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
           <p className="mt-2 text-secondary-light font-regular cursor-default">© 2026 EduFlow. All rights reserved.</p>
         </div>
-        
+
       </footer>
     </>
   )

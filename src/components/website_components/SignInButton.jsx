@@ -1,9 +1,10 @@
 import "./SignInButton.css";
+import { Link } from "react-router-dom";
 
 const SignInButton = () => {
   return (
     <>
-     <button className="sign-in">Sign In</button>
+     <Link to="/signin"><button className="sign-in">Sign In</button></Link>
     </>
   )
 }

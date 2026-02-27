@@ -1,0 +1,49 @@
+@import "../css/tailwindcss.css";
+
+.heading{
+  @apply flex gap-4 items-center justify-center;
+}
+
+.heading > h3 {
+  @apply text-secondary font-medium text-2xl;
+}
+
+form{
+  @apply flex flex-col gap-2 w-80 items-center;
+}
+
+.input-div{
+  @apply flex flex-col gap-1 relative w-full;
+}
+
+.input-div > label {
+  @apply text-secondary font-[500];
+}
+
+input{
+  @apply font-medium text-xs px-2 py-2 h-8 border border-secondary rounded-sm bg-input text-gray-900 transition duration-200;
+}
+
+input:hover {
+  @apply border-orange-accent;
+}
+
+input:focus{
+  @apply outline-none border-orange-accent;
+}
+
+.eye{
+  @apply absolute bottom-1.5 right-2 cursor-pointer;
+}
+
+button{
+  @apply w-30 py-2 text-secondary bg-orange-accent rounded-sm mt-8;
+}
+
+form > p:last-child {
+  @apply text-orange-accent text-xs font-light;
+}
+
+form > p:last-child > span{
+  @apply font-bold underline;
+}

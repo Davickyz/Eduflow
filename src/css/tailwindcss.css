@@ -7,9 +7,19 @@
   --color-primary: #0B1623;
   --color-secondary: #F5F5F5;
   --color-secondary-light: #C6C8CB;
+  --color-input: #d9d9d9;
   --color-footer: #16212E;
   --color-orange-accent: #BE4D25;
   --color-green-accent: #00AD26;
   --color-purple-accent: #BE2596;
   --color-cream-accent: #CEC67B;
+  --color-yellow-accent: #FCC219;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

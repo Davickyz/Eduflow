@@ -1,6 +1,10 @@
 @import "../src/css/satoshi.css";
 @import "../src/css/tailwindcss.css";
 
+html{
+  @apply no-scrollbar;
+}
+
 body{
   @apply bg-primary;
 }

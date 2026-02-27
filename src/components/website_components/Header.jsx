@@ -6,7 +6,7 @@ import "./Header.css";
 const Header = () => {
   return(
     <>
-      <header className="flex flex-row justify-between h-[80px] px-[20px] sticky top-0 z-50 backdrop-blur-md bg-primary-200">
+      <header className="flex flex-row justify-between h-[80px] px-[20px] sticky top-0 z-50 backdrop-blur-lg bg-primary/40">
         <div id="logo" className="flex flex-row items-center gap-[10px]">
           <img className="w-[40px] h-[40px]" src={logo} alt="logo" />
           <h3 className="uppercase font-bold text-secondary-light text-[18px] cursor-default">EduFlow</h3>
