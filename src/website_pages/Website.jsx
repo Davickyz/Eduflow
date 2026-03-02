@@ -6,7 +6,7 @@ const Website = () => {
   return(
     <>
       <Header />
-      <main className="bg-primary">
+      <main className="px-[40px]">
         <Outlet />
       </main>
       <Footer/>

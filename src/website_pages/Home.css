@@ -1,0 +1,5 @@
+@import "../css/tailwindcss.css";
+
+img{
+  @apply pointer-events-none;
+}

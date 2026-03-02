@@ -25,7 +25,7 @@ const Signin = () => {
           </div>
 
           {/* Form fields */}
-          <form action="">
+          <form action="" className="login-form">
 
             {/* Email Address */}
             <div className="input-div">
