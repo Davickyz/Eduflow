@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Footer from "../components/website_components/Footer";
 
 const Login = () => {
+  const context = useOutletContext();
   return(
     <>
       <main>
-        <Outlet />
+        <Outlet context={context}/>
       </main>
 
       <Footer />

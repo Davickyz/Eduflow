@@ -63,7 +63,7 @@ const Home = () => {
           </div>
           <div className="w-[500px] border">
             <img src={diamonds} />
-            <p>Evolve Your <span>Learning Style</span></p>
+            <p className="font-bold text-lg text-secondary flex items-center gap-4">Evolve Your <span  className="text-4xl text-orange-accent">Learning Style</span></p>
             <p>
               Step into a more tangible digital environment where lessons feel alive. EduFlow empowers you to engage with your courses with a new level of depth, making every assignment feel like a personal milestone in your professional evolution.
             </p>

@@ -7,6 +7,7 @@ import About from './website_pages/About';
 import Contact from './website_pages/Contact';
 import Signin from './website_pages/Signin';
 import Signup from './website_pages/Signup';
+import Data from './Data';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
       </Route>
-
-      <Route element={<Login />}>
-        <Route path="/signin" element={<Signin/>} />
-        <Route path="/signup" element={<Signup/>} />
+      <Route element={<Data/>}>
+        <Route element={<Login />}>
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
       </Route>
     </Routes>
   )
