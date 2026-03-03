@@ -99,6 +99,7 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Shortlist your essential reads */}
         <section className="flex flex-col items-center gap-[40px] mt-10">
           <h3 className="text-2xl text-secondary-light font-normal text-center w-[930px]">Shortlist your essential reads and track your completion rate from the first page to the final module.</h3>
           <img className="w-[1100px]" src={multidisplays} />
