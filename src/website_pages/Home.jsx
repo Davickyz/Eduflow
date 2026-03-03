@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import GetStarted from "../components/website_components/GetStarted.jsx";
 import "./Home.css";
 import desktopMobile from "../assets/images/desktop-mobile.svg";
@@ -6,6 +5,7 @@ import diamonds from "../assets/images/diamonds.svg";
 import globalUsers from "../assets/images/globalusers.svg";
 import deskPcMobile from "../assets/images/desktop-pc-mobile.svg";
 import threeDevices from "../assets/images/3-devices.svg";
+import signUpDevice from "../assets/images/signup-device.svg";
 import multidisplays from "../assets/images/multidisplays.svg";
 
 const Home = () => {
@@ -55,20 +55,55 @@ const Home = () => {
         <p className="text-secondary font-normal text-md">Literature</p>
       </section>
 
-      <div>
+      <div className="flex flex-col gap-24 py-20">
         {/* Evolve Your Learning Style */}
-        <section className="flex items-center justify-center gap-[100px] py-20">
+        <section className="flex items-center justify-center gap-[100px]">
           <div>
             <img className="w-[600px]" src={deskPcMobile} />
           </div>
-          <div className="w-[500px] border">
-            <img src={diamonds} />
-            <p className="font-bold text-lg text-secondary flex items-center gap-4">Evolve Your <span  className="text-4xl text-orange-accent">Learning Style</span></p>
-            <p>
+          <div className="w-[450px] relative flex flex-col gap-6">
+            <img className="absolute top-[-60px] left-[-50px]" src={diamonds} />
+            <p className="font-normal text-xl text-secondary flex items-center gap-4 italic">Evolve Your <span  className="text-4xl text-orange-accent not-italic font-bold">Learning Style</span></p>
+            <p className="font-thin text-secondary-light text-sm">
               Step into a more tangible digital environment where lessons feel alive. EduFlow empowers you to engage with your courses with a new level of depth, making every assignment feel like a personal milestone in your professional evolution.
             </p>
           </div>
         </section>
+
+        {/* Where Ambition Meets Action */}
+        <section className="flex flex-row-reverse items-center justify-center gap-[100px]">
+          <div>
+            <img className="w-[450px]" src={threeDevices} />
+          </div>
+          <div className="w-[450px] relative flex flex-col gap-6">
+            <img className="absolute top-[-60px] left-[-50px]" src={diamonds} />
+            <p className="font-normal text-xl text-secondary flex items-center gap-4 italic">Where Ambition <span  className="text-4xl text-orange-accent not-italic font-bold">Meets Action</span></p>
+            <p className="font-thin text-secondary-light text-sm">
+              Don't just track your education -- immerse yourself in it. EduFlow harmonizes your resources and assignments into a single, intuitive strea,, allowing you to dive deep into new subjects and emerge with a redefined understsnding of your potential.
+            </p>
+          </div>
+        </section>
+
+        {/* Stay Driven Stay Curious */}
+        <section className="flex items-center justify-center gap-[100px]">
+          <div>
+            <img className="w-[250px]" src={signUpDevice} />
+          </div>
+          <div className="w-[450px] relative flex flex-col gap-6">
+            <img className="absolute top-[-60px] left-[-50px]" src={diamonds} />
+            <p className="font-normal text-xl text-secondary flex items-center gap-4 italic">Stay Driven <span  className="text-4xl text-orange-accent not-italic font-bold">Stay Curious</span></p>
+            <p className="font-thin text-secondary-light text-sm">
+              Your curiosity has no limits, and neither should your library. Explore our curated picks designed for the driven mind and find the next book that will redefine your perspective.
+            </p>
+            <GetStarted />
+          </div>
+        </section>
+
+        <section className="flex flex-col items-center gap-[40px] mt-10">
+          <h3 className="text-2xl text-secondary-light font-normal text-center w-[930px]">Shortlist your essential reads and track your completion rate from the first page to the final module.</h3>
+          <img className="w-[1100px]" src={multidisplays} />
+        </section>
+
       </div>
       
     </>
