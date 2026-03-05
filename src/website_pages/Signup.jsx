@@ -9,7 +9,8 @@ import openEye from "../assets/icons/open-eye-light.svg";
 import closedEye from "../assets/icons/closed-eye-light.svg";
 
 const Signup = () => {
-  const {users, setUsers} = useOutletContext();
+  const {users, setUsers, Courses} = useOutletContext();
+  // console.log(Courses);
 
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("Error");
@@ -19,7 +20,7 @@ const Signup = () => {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [course, setCourse] =useState("");
+  const [selectedCourse, setSelectedCourse] =useState("");
   let person = {};
 
   const toggleInitialPassword = () => {
@@ -51,14 +52,14 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    if (finalPassword === initialPassword && course !== "" && finalPassword !== "" && firstname !== "" && lastname !== "" && email !== "") {
+    if (finalPassword === initialPassword && selectedCourse !== "" && finalPassword !== "" && firstname !== "" && lastname !== "" && email !== "") {
       setShowError(false);
       setSelectOption(false)
       person ={
         firstname: firstname,
         lastname: lastname,
         email : email,
-        course: course,
+        course: selectedCourse,
         password: finalPassword,
       };
 
@@ -67,14 +68,16 @@ const Signup = () => {
         person
       ]);
 
-      console.log(users)
+      // console.log(users)
 
-      setCourse("");
+      setSelectedCourse("");
       setEmail("");
       setFinalPassword("");
       setInitialPassword("");
       setLastName("");
       setFirstName("");
+
+      console.log("Signup Successful")
     } 
     else {
       if(finalPassword === "" || initialPassword === "" || firstname === "" || lastname === "" || email === ""){
@@ -84,7 +87,7 @@ const Signup = () => {
           setShowError(false)
         }, 5000)
       }
-      if (course === ""){
+      if (selectedCourse === ""){
         setSelectOption(true);
         setTimeout(()=>{
           setSelectOption(false)
@@ -160,22 +163,20 @@ const Signup = () => {
                 <select
                   className="border border-secondary-light pl-4 py-1 pr-5 rounded-lg text-secondary appearance-none cursor-pointer hover:border-orange-accent focus:outline-none focus:ring-2 focus:ring-orange-accent/20"
                   id="course"
-                  value={course}
-                  onChange={(e) => setCourse(e.target.value)}
+                  value={selectedCourse}
+                  onChange={(e) => setSelectedCourse(e.target.value)}
                 >
-                  <option value="" disabled selected hidden></option>
-                  <option
-                    className="bg-primary text-secondary-light cursor-pointer"
-                    value="agriculture"
-                  >
-                    Agriculture
-                  </option>
-                  <option
-                    className="bg-primary text-secondary-light cursor-pointer"
-                    value="finance"
-                  >
-                    Finance
-                  </option>
+                  <option value="" disabled hidden></option>
+                  {
+                    Courses.map( (course, index) => (
+                      <option key={index}
+                        className="bg-primary text-secondary-light cursor-pointer"
+                        value={course.department}
+                      >
+                        {course.department}
+                      </option>
+                    ))
+                  }
                 </select>
                 <div className="pointer-events-none absolute top-1.5 right-1 flex items-center">
                   <svg
