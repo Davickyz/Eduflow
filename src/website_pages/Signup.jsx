@@ -22,6 +22,32 @@ const Signup = () => {
   const [course, setCourse] =useState("");
   let person = {};
 
+  const toggleInitialPassword = () => {
+    let passwordInput = document.getElementById("initialPassword");
+    let toggleEye = document.getElementById("initialEye");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = 'text';
+      toggleEye.src = openEye;
+    } else if (passwordInput.type === "text") {
+      passwordInput.type = 'password';
+      toggleEye.src = closedEye;
+    }
+  }
+
+  const toggleFinalPassword = () => {
+    let passwordInput = document.getElementById("finalPassword");
+    let toggleEye = document.getElementById("finalEye");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = 'text';
+      toggleEye.src = openEye;
+    } else if (passwordInput.type === "text") {
+      passwordInput.type = 'password';
+      toggleEye.src = closedEye;
+    }
+  }
+
   const handleSignup = (e) => {
     e.preventDefault();
 
@@ -181,12 +207,13 @@ const Signup = () => {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
+                id="initialPassword"
                 name="password"
                 value={initialPassword}
                 onChange={(e) => setInitialPassword(e.target.value)}
               />
-              <div className="eye">
-                <img src={openEye}/>
+              <div className="eye" onClick={toggleInitialPassword}>
+                <img id="initialEye"  src={closedEye} alt="" />
               </div>
             </div>
 
@@ -195,12 +222,13 @@ const Signup = () => {
               <label htmlFor="password">Confirm Password</label>
               <input
                 type="password"
+                id="finalPassword"
                 name="password"
                 value={finalPassword}
                 onChange={(e) => setFinalPassword(e.target.value)}
               />
-              <div className="eye">
-                <img src={closedEye} alt="" />
+              <div className="eye" onClick={toggleFinalPassword}>
+                <img id="finalEye"  src={closedEye} alt="" />
               </div>
             </div>
 

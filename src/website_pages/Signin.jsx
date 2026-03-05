@@ -14,6 +14,19 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const togglePassword = () => {
+    let passwordInput = document.getElementById("password");
+    let toggleEye = document.getElementById("eye");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = 'text';
+      toggleEye.src = openEye;
+    } else if (passwordInput.type === "text") {
+      passwordInput.type = 'password';
+      toggleEye.src = closedEye;
+    }
+  }
+
   const logIn = (e) => {
     e.preventDefault();
 
@@ -36,8 +49,9 @@ const Signin = () => {
           setErrorStatus(false)
         }, 2000)
       }
-
-      console.log("Login Successful")
+      else{
+        console.log("Login Successful")
+      }
     } else{
       setErrorStatus(true);
       setErrorMessage("Fields cannot be empty")
@@ -81,12 +95,13 @@ const Signin = () => {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
+                id="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div className="eye">
-                <img src={openEye} alt="" />
+              <div className="eye" onClick={togglePassword}>
+                <img id="eye"  src={closedEye} alt="" />
               </div>
             </div>
 
