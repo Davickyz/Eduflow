@@ -7,8 +7,10 @@ import deskPcMobile from "../assets/images/desktop-pc-mobile.svg";
 import threeDevices from "../assets/images/3-devices.svg";
 import signUpDevice from "../assets/images/signup-device.svg";
 import multidisplays from "../assets/images/multidisplays.svg";
+import { useOutletContext } from "react-router-dom";
 
 const Home = () => {
+  const {Courses} = useOutletContext();
   return (
     <>
       {/* Main */}
@@ -47,12 +49,12 @@ const Home = () => {
       </section>
 
       {/* ScrollBar */}
-      <section className="border-y-2 border-secondary flex items-center justify-center gap-24 h-24 my-8">
-        <p className="text-secondary font-normal text-md">Architecture</p>
-        <p className="text-secondary font-normal text-md">Arts</p>
-        <p className="text-secondary font-normal text-md">Science</p>
-        <p className="text-secondary font-normal text-md">Business</p>
-        <p className="text-secondary font-normal text-md">Literature</p>
+      <section className="flex items-center justify-center gap-24 border-y-2 border-secondary  h-24 my-8 w-full pointer-events-none overflow-hidden">
+        <div className="flex items-center justify-center gap-24 animation-scroller w-full">          
+          {Courses.map((course, index) => (
+            <p key={index} className="text-secondary font-normal text-md whitespace-nowrap">{course.department}</p>
+          )) }
+        </div>
       </section>
 
       <div className="flex flex-col gap-24 py-20">

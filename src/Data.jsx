@@ -1,17 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 const Data = () => {
-  const [users, setUsers] = useState([
-    {
-      firstname: "Alabi",
-      lastname: "Matilda",
-      email: "matildavicky2307@gmail.com",
-      course: "Linguistics",
-      password: "123456",
-    },
-  ]);
-
   const Courses = [
     {
       department: "Science & Nature",
@@ -118,6 +108,50 @@ const Data = () => {
       ]
     }
   ]
+
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    let database = localStorage.getItem('database');
+
+    if(!database){
+      // if database is empty
+      fetch('https://randomuser.me/api/?results=10')
+        .then(response => response.json())
+        .then(data => {
+          data = data.results.map(user => {
+            return{
+              firstname: user.name.first,
+              lastname: user.name.last,
+              email: user.email,
+              password: user.login.salt,
+              id: user.login.uuid,
+              // Assigned Course Index
+              course: Courses[Math.floor(Math.random() * Courses.length)].department,
+            }
+          })
+          setUsers(data)
+          localStorage.setItem('database', JSON.stringify(data))
+        })
+        .catch(error => console.log('Error :' , error))
+    } else {
+      // if database exist,
+      database = JSON.parse(database)
+      setUsers(database);
+    }
+    
+  },[])
+
+  // Update Local Storage whenver there is a change in users
+  useEffect(() => {
+    if (users.length > 0) {
+      localStorage.setItem('database', JSON.stringify(users));
+      // console.log(users)
+    }
+  }, [users]);
+
+  
 
   return <Outlet context={{users, setUsers, Courses}} />;
 };

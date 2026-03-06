@@ -40,19 +40,20 @@ const Signin = () => {
         setTimeout(() => {
           setErrorStatus(false)
         }, 2000)
-      }
-      if (user.password !== password) {
+      } else if (user.password !== password) {
         console.log("incorrect password");
         setErrorStatus(true);
         setErrorMessage("Password incorrect")
         setTimeout(() => {
           setErrorStatus(false)
         }, 2000)
+      } else{
+        console.log("Login Successful");
+        setEmail("");
+        setPassword("");
       }
-      else{
-        console.log("Login Successful")
-      }
-    } else{
+    }
+    else {
       setErrorStatus(true);
       setErrorMessage("Fields cannot be empty")
         setTimeout(() => {

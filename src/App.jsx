@@ -12,17 +12,22 @@ import Data from './Data';
 function App() {
   return (
     <Routes>
-      <Route element={<Website/>}>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-      </Route>
+      
       <Route element={<Data/>}>
+
+        <Route element={<Website/>}>
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
+        </Route>
+
         <Route element={<Login />}>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
         </Route>
+
       </Route>
+      
     </Routes>
   )
 }

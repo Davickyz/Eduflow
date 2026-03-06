@@ -53,31 +53,41 @@ const Signup = () => {
     e.preventDefault();
 
     if (finalPassword === initialPassword && selectedCourse !== "" && finalPassword !== "" && firstname !== "" && lastname !== "" && email !== "") {
-      setShowError(false);
-      setSelectOption(false)
-      person ={
-        firstname: firstname,
-        lastname: lastname,
-        email : email,
-        course: selectedCourse,
-        password: finalPassword,
-      };
+      const emailExists = users.find((user) => user.email === email);
+      if(!emailExists){
+        setShowError(false);
+        setSelectOption(false)
+        person ={
+          firstname: firstname,
+          lastname: lastname,
+          email : email,
+          course: selectedCourse,
+          password: finalPassword,
+          id: Date.now().toString() + '-' + Math.random().toString(36).substring(2,9)
+        };
 
-      setUsers([
-        ...users,
-        person
-      ]);
+        setUsers([
+          ...users,
+          person
+        ]);
 
-      // console.log(users)
+        console.log("Sign up successful")
 
-      setSelectedCourse("");
-      setEmail("");
-      setFinalPassword("");
-      setInitialPassword("");
-      setLastName("");
-      setFirstName("");
+        setSelectedCourse("");
+        setEmail("");
+        setFinalPassword("");
+        setInitialPassword("");
+        setLastName("");
+        setFirstName("");
 
-      console.log("Signup Successful")
+        console.log("Signup Successful")
+      } else {
+        setShowError(true);
+        setErrorMessage("Email already exists");
+        setTimeout(() => {
+          setShowError(false)
+        }, 5000)
+      }
     } 
     else {
       if(finalPassword === "" || initialPassword === "" || firstname === "" || lastname === "" || email === ""){

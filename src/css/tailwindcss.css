@@ -23,3 +23,23 @@
     display: none;
   }
 }
+
+@utility animation-scroller {
+  animation-name: scrollLtoR;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes scrollLtoR {
+  0% {
+    transform: translateX(3%);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  
+  100% {
+    transform: translateX(3%);
+  }
+}
