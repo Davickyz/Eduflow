@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useOutletContext, useNavigate } from "react-router-dom";
 import "./Login.css";
 import signUpImage from "../assets/images/signup-device.svg";
 import logo from "../assets/logo.svg";
@@ -8,7 +8,10 @@ import caution from "../assets/icons/caution.svg";
 import { useState } from "react";
 
 const Signin = () => {
+  const navigate = useNavigate();
   const { users } = useOutletContext();
+
+
   const [errorStatus, setErrorStatus] = useState(false);
   const [errorMessage, setErrorMessage] = useState("Error");
   const [email, setEmail] = useState("");
@@ -49,6 +52,9 @@ const Signin = () => {
         }, 2000)
       } else{
         console.log("Login Successful");
+        
+        navigate(`/app/${user.id}/dashboard`)
+
         setEmail("");
         setPassword("");
       }

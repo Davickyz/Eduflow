@@ -1,0 +1,37 @@
+@import "../../css/tailwindcss.css";
+
+.sidenav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  @apply text-secondary-light text-sm;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidenav-item.active {
+  background-color: rgba(255, 255, 255, 0.05);
+  @apply font-semibold text-secondary;
+  position: relative;
+}
+
+.sidenav-item.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 4px;
+  background-color: #e2e68b;
+  border-radius: 4px 0 0 4px;
+  
+  box-shadow: -2px 0px 15px 2px rgba(226, 230, 139, 0.5);
+}
+
+.sidenav-item > img {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}

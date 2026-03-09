@@ -8,6 +8,11 @@ import Contact from './website_pages/Contact';
 import Signin from './website_pages/Signin';
 import Signup from './website_pages/Signup';
 import Data from './Data';
+import Eduflow from './app_pages/Eduflow';
+import Dashboard from './app_pages/Dashboard';
+import Explore from './app_pages/Explore';
+import Assignment from './app_pages/Assignment';
+import Profile from './app_pages/Profile';
 
 function App() {
   return (
@@ -24,6 +29,13 @@ function App() {
         <Route element={<Login />}>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+        </Route>
+
+        <Route element={<Eduflow />}>
+          <Route path="/app/:userId/dashboard" element={<Dashboard />} />
+          <Route path="/app/:userId/explore-courses" element={<Explore />} />
+          <Route path="/app/:userId/assignments" element={<Assignment />} />
+          <Route path="/app/:userId/profile" element={<Profile />} />
         </Route>
 
       </Route>

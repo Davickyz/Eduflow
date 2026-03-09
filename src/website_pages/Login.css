@@ -37,7 +37,7 @@ form.login-form{
 }
 
 .login-form button{
-  @apply w-30 py-2 text-secondary bg-orange-accent rounded-sm mt-8;
+  @apply w-30 py-2 text-secondary bg-orange-accent rounded-sm mt-8 cursor-pointer;
 }
 
 form > p:last-child {

@@ -7,6 +7,7 @@
   --color-primary: #0B1623;
   --color-secondary: #F5F5F5;
   --color-secondary-light: #C6C8CB;
+  --color-light: #FFFFFD;
   --color-input: #d9d9d9;
   --color-footer: #16212E;
   --color-orange-accent: #BE4D25;
@@ -41,5 +42,20 @@
   
   100% {
     transform: translateX(3%);
+  }
+}
+
+@utility animation-success{
+  animation: success 0.5s ease-in-out
+}
+
+@keyframes success {
+  from{
+    right: -800px;
+    opacity: 0;
+  }
+  to {
+    right: 16px;
+    opacity: 1;
   }
 }

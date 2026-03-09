@@ -129,6 +129,7 @@ const Data = () => {
               id: user.login.uuid,
               // Assigned Course Index
               course: Courses[Math.floor(Math.random() * Courses.length)].department,
+              picture: user.picture.large
             }
           })
           setUsers(data)

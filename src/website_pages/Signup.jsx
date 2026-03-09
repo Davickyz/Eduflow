@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import signUpImage from "../assets/images/signup-device.svg";
 import logo from "../assets/logo.svg";
@@ -7,8 +7,10 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import openEye from "../assets/icons/open-eye-light.svg";
 import closedEye from "../assets/icons/closed-eye-light.svg";
+import verifyIcon from "../assets/icons/verify.svg";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const {users, setUsers, Courses} = useOutletContext();
   // console.log(Courses);
 
@@ -21,6 +23,7 @@ const Signup = () => {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedCourse, setSelectedCourse] =useState("");
+  const [success, setSuccess] = useState(false);
   let person = {};
 
   const toggleInitialPassword = () => {
@@ -63,7 +66,8 @@ const Signup = () => {
           email : email,
           course: selectedCourse,
           password: finalPassword,
-          id: Date.now().toString() + '-' + Math.random().toString(36).substring(2,9)
+          id: Date.now().toString() + '-' + Math.random().toString(36).substring(2,9),
+          picture: null
         };
 
         setUsers([
@@ -71,14 +75,17 @@ const Signup = () => {
           person
         ]);
 
-        console.log("Sign up successful")
+          setSuccess(true)
+          setTimeout(() => {
+            navigate('/signin')
 
-        setSelectedCourse("");
-        setEmail("");
-        setFinalPassword("");
-        setInitialPassword("");
-        setLastName("");
-        setFirstName("");
+          setSelectedCourse("");
+          setEmail("");
+          setFinalPassword("");
+          setInitialPassword("");
+          setLastName("");
+          setFirstName("");
+          }, 2000)
 
         console.log("Signup Successful")
       } else {
@@ -114,7 +121,13 @@ const Signup = () => {
   }
   return (
     <>
-      <section className="flex items-center justify-center gap-80 py-[80px]">
+      <section className="flex items-center justify-center gap-80 py-[80px] relative w-full overflow-hidden">
+
+        <div className={`absolute top-4 right-4 bg-secondary-light py-2 px-4 rounded-md font-semibold text-primary ${ success ? 'animation-success  flex gap-4 ' : 'hidden' }`}>
+          <img src={verifyIcon} />
+          Signup Successful
+        </div>
+
         {/* Sign Up Device Image */}
         <div>
           <img className="pointer-events-none" src={signUpImage} />
