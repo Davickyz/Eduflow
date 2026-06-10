@@ -22,8 +22,8 @@ const Data = () => {
         "Psychology",
         "Sociology",
         "Anthropology",
-        "Communication & Media",
-        "Education & Pedagogy",
+        "Communication",
+        "Education",
         "Criminology",
         "Linguistics",
         "Gender Studies"
@@ -91,7 +91,7 @@ const Data = () => {
         "Human Rights",
         "Public Policy",
         "Corporate Law",
-        "Governance & Administration"
+        "Governance"
       ]
     },
     {

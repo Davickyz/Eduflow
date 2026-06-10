@@ -28,9 +28,9 @@ const Eduflow = () => {
 
   return(
     <>
-      <section className="bg-light flex relative h-screen">
+      <section className="bg-light flex relative h-screen ">
         <Sidenav />
-        <div className="flex-1 flex-col  px-4">
+        <div className="h-screen flex-1 flex-col px-4 overflow-hidden">
           <Topbar users={users} Courses={Courses} currentUser={currentUser} />
           <main className="bg-light">
             <Outlet context={{users, Courses, currentUser}}/>

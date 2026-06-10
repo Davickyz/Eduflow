@@ -14,6 +14,7 @@ import Explore from './app_pages/Explore';
 import Assignment from './app_pages/Assignment';
 import Profile from './app_pages/Profile';
 
+
 function App() {
   return (
     <Routes>
@@ -36,6 +37,7 @@ function App() {
           <Route path="/app/:userId/explore-courses" element={<Explore />} />
           <Route path="/app/:userId/assignments" element={<Assignment />} />
           <Route path="/app/:userId/profile" element={<Profile />} />
+          {/* <Route path="/app/:userId/' /> */}
         </Route>
 
       </Route>
